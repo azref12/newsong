@@ -51,8 +51,8 @@ def Generals_list (request):
 
         if localserializer.is_valid():
                 try:
-                        res = Lagu.objects.filter(idlagu = y)
-                        x = int (res.idlagu[0:500])
+                        res = Lagu.objects.filter(idlagu = y).last()
+                        x = int (res.idlagu)+1
                         print(x)
                 except :
                         x=1
