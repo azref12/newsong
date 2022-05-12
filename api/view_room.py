@@ -71,8 +71,7 @@ def room_list (request):
             localserializer = masterserialzer(localmodel, many=True)
             return JsonResponse({'message': 'successfully', 'status': True, 'count': 1, 'results': localserializer.data},
                                 status=201)
-        return JsonResponse(localserializer.errors,
-                            status=400)
+        return JsonResponse(localserializer.errors, status=400)
 
 @csrf_exempt
 @api_view(["GET", "PUT", "PATCH", "DELETE"])
